@@ -28,7 +28,7 @@ SECRET_KEY = 'm1weo#)ba7$pb)t1d^#$lhln!#0e$w4!0jgt2t%xruqz4_&r$o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["taeyeonshop.pythonanywhere.com", "127.0.0.8", "localhost"]
 
 # Application definition
 
@@ -104,6 +104,20 @@ DATABASES = {
         },
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'taeyeonshop$default',
+#         'USER': 'taeyeonshop',
+#         'PASSWORD': 'mysql1111',  # !!! 자신의 비밀번호로 변경
+#         'HOST': 'taeyeonshop.mysql.pythonanywhere-services.com',
+#         'OPTIONS': {
+#             'init_command':
+#             "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO'",
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
