@@ -14,6 +14,7 @@ Shopping cart
         <th scope="col" style="width: 25%;">Image</th>
         <th scope="col">Product</th>
         <th scope="col">Quantity</th>
+        <th scope="col"></th>
         <th scope="col">Remove</th>
         <th scope="col">Unit price</th>
         <th scope="col">Price</th>
@@ -34,12 +35,14 @@ Shopping cart
                 {% csrf_token %}
                 {{ item.quantity_form.quantity }}
                 {{ item.quantity_form.is_update }}
-                <div class="row-fluid">
-                    <input type="submit" class="btn btn-primary pull-right form-control" value="Update">
-                </div>
-            </form>
+        <td>
+            <div class="row-fluid">
+                <input type="submit" class="btn btn-success btn-sm" value="Update" style="padding-left: -10px">
+            </div>
         </td>
-        <td><a href="{% url 'cart:product_remove' product.id %}">Remove</a></td>
+        </form>
+        </td>
+        <td><a href="{% url 'cart:product_remove' product.id %}" class="btn btn-danger btn-sm">Remove</a></td>
         <td class="num">&#8361;{{item.price | floatformat:'0' | intcomma}}</td>
         <td class="num">&#8361;{{item.total_price | floatformat:'0' | intcomma}}</td>
     </tr>
@@ -71,7 +74,7 @@ Shopping cart
 </p>
 <form action='{% url "coupon:add" %}' method="post">
     {{ add_coupon }}
-    <input type="submit" value="Add">
+    <input type="submit" value="Add" class="btn btn-info btn-sm">
     {% csrf_token %}
 </form>
 

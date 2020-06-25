@@ -1,6 +1,6 @@
 $(function () {
     var IMP = window.IMP;
-    IMP.init('가맹점식별코드');  // 아임포트 결제 준비 (가맹점식별코드는 아임포트 관리자 페이지 시스템 설정 창에서 확인)
+    IMP.init('imp25769730');  // 아임포트 결제 준비 (가맹점식별코드는 아임포트 관리자 페이지 시스템 설정 창에서 확인)
     $('.order-form').on('submit', function (e) {  // 주문 폼 입력 후 'Place Order' 버튼 클릭하면
         var amount = parseFloat($('.order-form input[name="amount"]').val().replace(',', ''));
         var type = $('.order-form input[name="type"]:checked').val();
